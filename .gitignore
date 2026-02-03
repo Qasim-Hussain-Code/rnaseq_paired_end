@@ -1,0 +1,117 @@
+# RNA-seq Analysis Pipeline - Git Ignore Rules
+# Ignoring large data files and analysis outputs (>100MB)
+
+# Raw sequencing data
+fastq_raw/*.fastq.gz
+fastq_raw/*.fastq
+fastq_raw/*.fq.gz
+fastq_raw/*.fq
+
+# Merged reads directory
+fastq_raw/merged/*.fastq.gz
+fastq_raw/merged/*.fastq
+fastq_raw/merged/*.fq.gz
+fastq_raw/merged/*.fq
+
+# Reference genome files
+reference_sequences/*.fna
+reference_sequences/*.fna.gz
+reference_sequences/*.fa
+reference_sequences/*.fa.gz
+reference_sequences/*.fasta
+reference_sequences/*.fasta.gz
+
+# Annotation files
+reference_sequences/*.gff
+reference_sequences/*.gff.gz
+reference_sequences/*.gtf
+reference_sequences/*.gtf.gz
+
+# READemption input files
+READemption_analysis/input/reads/*.fastq.gz
+READemption_analysis/input/reads/*.fastq
+READemption_analysis/input/reads/*.fq.gz
+READemption_analysis/input/reads/*.fq
+READemption_analysis/input/rhizobium_reference_sequences/*.fna
+READemption_analysis/input/rhizobium_reference_sequences/*.fa
+READemption_analysis/input/rhizobium_reference_sequences/*.fasta
+READemption_analysis/input/rhizobium_annotations/*.gff
+READemption_analysis/input/rhizobium_annotations/*.gtf
+
+# BAM files and indexes
+READemption_analysis/output/align/alignments/*.bam
+READemption_analysis/output/align/alignments/*.bam.bai
+READemption_analysis/output/align/alignments/*.sam
+
+# Genome index files
+READemption_analysis/output/align/index/*.idx
+READemption_analysis/output/align/index/*.index
+
+# Unaligned reads
+READemption_analysis/output/align/unaligned_reads/*.fa
+READemption_analysis/output/align/unaligned_reads/*.fasta
+READemption_analysis/output/align/unaligned_reads/*.fastq
+
+# Processed reads (can be large)
+READemption_analysis/output/align/processed_reads/*.fa.gz
+READemption_analysis/output/align/processed_reads/*.fasta.gz
+
+# Coverage files (wiggle files can be large)
+READemption_analysis/output/coverage/**/*.wig
+READemption_analysis/output/coverage/**/*.wiggle
+READemption_analysis/output/coverage/**/*.bw
+READemption_analysis/output/coverage/**/*.bigwig
+READemption_analysis/output/*_coverage-*/**/*.wig
+READemption_analysis/output/*_coverage-*/**/*.wiggle
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.out
+*.err
+
+# Nohup logs
+nohup.out
+
+# Old/backup scripts
+*.sh.bak
+*.sh.old
+*~
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# R data files
+*.RData
+*.Rhistory
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Keep README files
+!**/README.md
+
+# Keep configuration files
+!READemption_analysis/config.json
+
+# Keep statistics and reports (these are typically small)
+!READemption_analysis/output/align/reports_and_stats/**/*.csv
+!READemption_analysis/output/align/reports_and_stats/**/*.txt
+!READemption_analysis/output/align/reports_and_stats/**/*.json
+
+# Keep quantification results
+!READemption_analysis/output/*_gene_quanti_combined/**/*.csv
+!READemption_analysis/output/*_gene_quanti_combined/**/*.txt
+
+# Keep DESeq2 results (CSV files only, not raw data)
+!READemption_analysis/output/*_deseq/deseq_extended/**/*.csv
+!READemption_analysis/output/*_deseq/deseq_extended/**/*.txt
+
+# Keep visualization outputs (PNG/PDF files are usually manageable)
+!READemption_analysis/output/*_viz_*/**/*.png
+!READemption_analysis/output/*_viz_*/**/*.pdf
+!READemption_analysis/output/*_viz_*/**/*.svg
