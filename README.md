@@ -1,4 +1,4 @@
-# Rhizobium tropici CIAT 899 RNA-Seq Analysis Pipeline
+# RNA-Seq Analysis Pipeline
 
 ## Project Overview
 
